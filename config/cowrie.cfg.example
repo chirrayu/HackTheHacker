@@ -1,0 +1,12 @@
+# Example-only configuration notes for a restricted lab deployment.
+# Copy into the Cowrie installation; do not commit a live configuration.
+
+[honeypot]
+hostname = lab-cowrie
+
+[output_jsonlog]
+enabled = true
+logfile = var/log/cowrie/cowrie.json
+
+# Keep management and honeypot networking isolated at the VM/firewall layer.
+# Do not add public forwarding here during initial validation.
