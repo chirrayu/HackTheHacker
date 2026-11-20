@@ -1,0 +1,35 @@
+{
+  "project": "HACK THE HACKER",
+  "version": "1.0.0",
+  "environment": "VirtualBox Isolated Lab",
+  "network": {
+    "type": "VirtualBox Host-Only Ethernet Adapter",
+    "subnet": "192.168.56.0/24",
+    "netmask": "255.255.255.0",
+    "gateway": null,
+    "dhcp_enabled": false
+  },
+  "nodes": [
+    {
+      "hostname": "windows-monitor",
+      "role": "Management & SOC Monitoring Host",
+      "os": "Windows 11",
+      "ip": "192.168.56.1",
+      "services": ["FastAPI Backend (8000)", "React Frontend (5173)", "PostgreSQL (5432)", "Suricata/TShark Sensor"]
+    },
+    {
+      "hostname": "kali-attacker",
+      "role": "Controlled Attacker VM",
+      "os": "Kali Linux Rolling",
+      "ip": "192.168.56.20",
+      "services": ["Authorized Traffic Generation", "Nmap", "Simulated Reconnaissance"]
+    },
+    {
+      "hostname": "metasploitable-target",
+      "role": "Intentionally Vulnerable Target VM",
+      "os": "Ubuntu 8.04 / Linux 2.6",
+      "ip": "192.168.56.30",
+      "services": ["FTP (21)", "SSH (22)", "Telnet (23)", "SMTP (25)", "HTTP (80)", "SMB (445)", "MySQL (3306)", "PostgreSQL (5432)"]
+    }
+  ]
+}

@@ -1,18 +1,61 @@
-__pycache__/
-*.py[cod]
-.pytest_cache/
+# Dependencies
+node_modules/
 .venv/
 venv/
 env/
-.env
-*.pem
-*.key
-data/*
-!data/.gitkeep
-reports/*
-!reports/.gitkeep
-*.log
-*.jsonl
-!.sample_events.jsonl
+ENV/
+backend/venv/
 
-AGENTS.md
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+coverage.xml
+htmlcov/
+
+# Frontend build and cache
+frontend/dist/
+frontend/build/
+frontend/.vite/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Runtime data and logs
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.log
+*.log.*
+logs/
+backend/data/pcap_uploads/
+monitoring/captures/
+
+# Packet capture files
+*.pcap
+*.pcapng
+*.cap
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
